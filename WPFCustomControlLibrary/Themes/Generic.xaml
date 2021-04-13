@@ -28,36 +28,36 @@
                                     <Setter Property="Grid.Column" Value="1"/>
                                     <Setter Property="Margin" Value="10,0,0,0"/>
                                     <Style.Triggers>
-                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyControl}}, Path=SameLine}"
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=SameLine}"
                                                      Value="true">
                                             <Setter Property="Grid.Column" Value="0"/>
                                             <Setter Property="Grid.ColumnSpan" Value="2"/>
                                             <Setter Property="Grid.Row" Value="1"/>
                                             <Setter Property="Margin" Value="0"/>
                                         </DataTrigger>
-                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyControl}}, Path=ControlType}"
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ControlType}"
                                                      Value="{x:Static local:PropertyValueControlTypes.TextBox}">
                                             <Setter Property="Content">
                                                 <Setter.Value>
-                                                    <TextBox Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyControl}},
+                                                    <TextBox Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},
                                                         Path=Text, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center"/>
                                                 </Setter.Value>
                                             </Setter>
                                         </DataTrigger>
-                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyControl}}, Path=ControlType}"
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ControlType}"
                                                      Value="{x:Static local:PropertyValueControlTypes.MultiLineTextBox}">
                                             <Setter Property="Content">
                                                 <Setter.Value>
-                                                    <TextBox Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyControl}},
+                                                    <TextBox Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},
                                                         Path=Text, UpdateSourceTrigger=PropertyChanged}" AllowDrop="True" AcceptsTab="True" AcceptsReturn="True"/>
                                                 </Setter.Value>
                                             </Setter>
                                         </DataTrigger>
-                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyControl}}, Path=ControlType}"
+                                        <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=ControlType}"
                                                      Value="{x:Static local:PropertyValueControlTypes.Label}">
                                             <Setter Property="Content">
                                                 <Setter.Value>
-                                                    <Label Content="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyControl}},
+                                                    <Label Content="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},
                                                         Path=Text}"/>
                                                 </Setter.Value>
                                             </Setter>
