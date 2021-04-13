@@ -39,7 +39,7 @@
                                                      Value="{x:Static local:PropertyValueControlTypes.TextBox}">
                                             <Setter Property="Content">
                                                 <Setter.Value>
-                                                    <TextBox Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},
+                                                    <TextBox Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyControl}},
                                                         Path=Text, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center"/>
                                                 </Setter.Value>
                                             </Setter>
