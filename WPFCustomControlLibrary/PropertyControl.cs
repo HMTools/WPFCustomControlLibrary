@@ -65,7 +65,8 @@ namespace WPFCustomControlLibrary
         }
 
         public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register(nameof(Text), typeof(string), typeof(PropertyControl), new PropertyMetadata(default(string)));
+            DependencyProperty.Register(nameof(Text), typeof(string), typeof(PropertyControl), 
+                new FrameworkPropertyMetadata(default(string), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault) { DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged});
         #endregion
 
         #endregion
