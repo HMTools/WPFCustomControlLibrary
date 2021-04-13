@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Version>1.0.1</Version>
+    <Authors>HMTools</Authors>
+    <Company>HMTools</Company>
+    <Description>WPF library of custom controls</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>HMTools</Copyright>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="HMTools.WPFLibrary" Version="1.1.0.7" />
+  </ItemGroup>
+
+</Project>
