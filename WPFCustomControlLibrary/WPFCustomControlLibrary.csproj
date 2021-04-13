@@ -3,12 +3,15 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWPF>true</UseWPF>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <Authors>HMTools</Authors>
     <Company>HMTools</Company>
     <Description>WPF library of custom controls</Description>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Copyright>HMTools</Copyright>
+    <PackageProjectUrl>https://github.com/HMTools/WPFCustomControlLibrary</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/HMTools/WPFCustomControlLibrary</RepositoryUrl>
+    <PackageTags>WPF, Custom Controls, Library</PackageTags>
   </PropertyGroup>
 
   <ItemGroup>

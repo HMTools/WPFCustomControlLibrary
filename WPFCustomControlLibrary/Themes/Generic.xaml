@@ -18,7 +18,8 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <Label Style="{StaticResource Label_Property3}" Content="{TemplateBinding Title}"/>
-                        <TextBox Grid.Column="1" Text="{TemplateBinding Text}" Margin="10,0,0,0" VerticalContentAlignment="Center"/>
+                        <TextBox Grid.Column="1" Text="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Text, UpdateSourceTrigger=PropertyChanged}"
+                                 Margin="10,0,0,0" VerticalContentAlignment="Center"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
