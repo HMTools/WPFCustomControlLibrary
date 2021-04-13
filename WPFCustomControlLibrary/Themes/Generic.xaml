@@ -29,7 +29,7 @@
                                     <Setter Property="Margin" Value="10,0,0,0"/>
                                     <Style.Triggers>
                                         <DataTrigger Binding="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=SameLine}"
-                                                     Value="true">
+                                                     Value="false">
                                             <Setter Property="Grid.Column" Value="0"/>
                                             <Setter Property="Grid.ColumnSpan" Value="2"/>
                                             <Setter Property="Grid.Row" Value="1"/>
