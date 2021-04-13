@@ -69,6 +69,31 @@ namespace WPFCustomControlLibrary
                 new FrameworkPropertyMetadata(default(string), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault) { DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged});
         #endregion
 
+
+        #region Dependency Property - ControlType
+        public PropertyValueControlTypes ControlType
+        {
+            get { return (PropertyValueControlTypes)GetValue(ControlTypeProperty); }
+            set { SetValue(ControlTypeProperty, value); }
+        }
+
+        public static readonly DependencyProperty ControlTypeProperty =
+            DependencyProperty.Register(nameof(ControlType), typeof(PropertyValueControlTypes), typeof(PropertyControl), new PropertyMetadata(PropertyValueControlTypes.TextBox));
+        #endregion
+
+
+        #region Dependency Property - SameLine
+        public bool SameLine
+        {
+            get { return (bool)GetValue(SameLineProperty); }
+            set { SetValue(SameLineProperty, value); }
+        }
+
+        public static readonly DependencyProperty SameLineProperty =
+            DependencyProperty.Register(nameof(SameLine), typeof(bool), typeof(PropertyControl), new PropertyMetadata(true));
+        #endregion
+
+
         #endregion
 
         #endregion
@@ -83,5 +108,16 @@ namespace WPFCustomControlLibrary
             DefaultStyleKeyProperty.OverrideMetadata(typeof(PropertyControl), new FrameworkPropertyMetadata(typeof(PropertyControl)));
         }
         #endregion
+
+        
     }
+    #region Enums
+    public enum PropertyValueControlTypes
+    {
+        TextBox,
+        MultiLineTextBox,
+        ComboBox,
+        Label,
+    }
+    #endregion
 }
