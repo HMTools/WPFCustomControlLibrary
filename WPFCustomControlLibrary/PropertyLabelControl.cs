@@ -39,10 +39,11 @@ namespace WPFCustomControlLibrary
     /// Step 2)
     /// Go ahead and use your control in the XAML file.
     ///
-    ///     <MyNamespace:PropertyControl/>
+    ///     <MyNamespace:PropertyLabelControl/>
     ///
     /// </summary>
-    public class PropertyControl : Control
+    public class PropertyLabelControl : Control
+
     {
         #region Dependency Properties
 
@@ -54,47 +55,21 @@ namespace WPFCustomControlLibrary
         }
 
         public static readonly DependencyProperty TitleProperty =
-            DependencyProperty.Register(nameof(Title), typeof(string), typeof(PropertyControl), new PropertyMetadata(default(string)));
+            DependencyProperty.Register(nameof(Title), typeof(string), typeof(PropertyLabelControl), new PropertyMetadata(default(string)));
+        #endregion
 
 
-        #region Dependency Property - Text
-        public string Text
+        #region Dependency Property - Content
+        public ContentPresenter Content
         {
-            get { return (string)GetValue(TextProperty); }
-            set { SetValue(TextProperty, value); }
+            get { return (ContentPresenter)GetValue(ContentProperty); }
+            set { SetValue(ContentProperty, value); }
         }
 
-        public static readonly DependencyProperty TextProperty =
-            DependencyProperty.Register(nameof(Text), typeof(string), typeof(PropertyControl), 
-                new FrameworkPropertyMetadata(default(string), FrameworkPropertyMetadataOptions.BindsTwoWayByDefault) { DefaultUpdateSourceTrigger = UpdateSourceTrigger.PropertyChanged});
+        public static readonly DependencyProperty ContentProperty =
+            DependencyProperty.Register(nameof(Content), typeof(ContentPresenter), typeof(PropertyLabelControl), new PropertyMetadata(default(ContentPresenter)));
         #endregion
 
-
-        #region Dependency Property - ControlType
-        public PropertyValueControlTypes ControlType
-        {
-            get { return (PropertyValueControlTypes)GetValue(ControlTypeProperty); }
-            set { SetValue(ControlTypeProperty, value); }
-        }
-
-        public static readonly DependencyProperty ControlTypeProperty =
-            DependencyProperty.Register(nameof(ControlType), typeof(PropertyValueControlTypes), typeof(PropertyControl), new PropertyMetadata(PropertyValueControlTypes.TextBox));
-        #endregion
-
-
-        #region Dependency Property - SameLine
-        public bool SameLine
-        {
-            get { return (bool)GetValue(SameLineProperty); }
-            set { SetValue(SameLineProperty, value); }
-        }
-
-        public static readonly DependencyProperty SameLineProperty =
-            DependencyProperty.Register(nameof(SameLine), typeof(bool), typeof(PropertyControl), new PropertyMetadata(true));
-        #endregion
-
-
-        #endregion
 
         #endregion
 
@@ -103,21 +78,14 @@ namespace WPFCustomControlLibrary
         #endregion
 
         #region Constructors
-        static PropertyControl()
+        static PropertyLabelControl()
         {
-            DefaultStyleKeyProperty.OverrideMetadata(typeof(PropertyControl), new FrameworkPropertyMetadata(typeof(PropertyControl)));
+            DefaultStyleKeyProperty.OverrideMetadata(typeof(PropertyLabelControl), new FrameworkPropertyMetadata(typeof(PropertyLabelControl)));
         }
         #endregion
 
-        
+        #region Methods
+
+        #endregion
     }
-    #region Enums
-    public enum PropertyValueControlTypes
-    {
-        TextBox,
-        MultiLineTextBox,
-        ComboBox,
-        Label,
-    }
-    #endregion
 }

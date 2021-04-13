@@ -8,19 +8,78 @@
     </ResourceDictionary.MergedDictionaries>
     
 
-    <Style TargetType="{x:Type local:PropertyControl}">
+    <Style TargetType="{x:Type local:PropertyTextBoxControl}">
         <Setter Property="Template">
             <Setter.Value>
-                <ControlTemplate TargetType="{x:Type local:PropertyControl}">
+                <ControlTemplate TargetType="{x:Type local:PropertyTextBoxControl}">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
-                        <Label Style="{StaticResource Label_Property3}" Content="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyControl}},
+                        <Label Style="{StaticResource Label_Property3}" Content="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyTextBoxControl}},
                             Path=Title, NotifyOnTargetUpdated=True}"/>
-                        <TextBox Grid.Column="1" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyControl}},
-                            Path=Text, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center"/>
+                        <TextBox Grid.Column="1" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyTextBoxControl}},
+                            Path=Text, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" Margin="10,0,0,0"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:PropertyLabelControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:PropertyLabelControl}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Style="{StaticResource Label_Property3}" Content="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyLabelControl}},
+                            Path=Title, NotifyOnTargetUpdated=True}"/>
+                        <Label Grid.Column="1" Content="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyLabelControl}},
+                            Path=Content, UpdateSourceTrigger=PropertyChanged}" Margin="10,0,0,0"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:PropertyComboBoxControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:PropertyComboBoxControl}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Style="{StaticResource Label_Property3}" Content="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyComboBoxControl}},
+                            Path=Title}"/>
+                        <ComboBox MinWidth="150" SelectedItem="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyComboBoxControl}},
+                            Path=SelectedItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                  ItemsSource="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyComboBoxControl}},
+                            Path=ItemsSource}" Grid.Column="1"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="{x:Type local:PropertyMultiLineTextBoxControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:PropertyMultiLineTextBoxControl}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label Style="{StaticResource Label_Property3}" Content="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyMultiLineTextBoxControl}},
+                            Path=Title}"/>
+                        <TextBox Grid.Row="1" VerticalContentAlignment="Top" MinHeight="50" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyMultiLineTextBoxControl}},
+                            Path=Text, UpdateSourceTrigger=PropertyChanged}" AllowDrop="True" AcceptsReturn="True" AcceptsTab="True"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
