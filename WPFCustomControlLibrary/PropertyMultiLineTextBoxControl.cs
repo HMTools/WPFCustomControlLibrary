@@ -79,7 +79,7 @@ namespace WPFCustomControlLibrary
         }
 
         public static readonly DependencyProperty IsEditableProperty =
-            DependencyProperty.Register(nameof(IsReadOnly), typeof(bool), typeof(PropertyMultiLineTextBoxControl), new PropertyMetadata(true));
+            DependencyProperty.Register(nameof(IsReadOnly), typeof(bool), typeof(PropertyMultiLineTextBoxControl), new PropertyMetadata(false));
         #endregion
 
 
