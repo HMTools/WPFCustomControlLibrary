@@ -70,6 +70,18 @@ namespace WPFCustomControlLibrary
         #endregion
 
 
+        #region Dependency Property - IsReadOnly
+        public bool IsReadOnly
+        {
+            get { return (bool)GetValue(IsEditableProperty); }
+            set { SetValue(IsEditableProperty, value); }
+        }
+
+        public static readonly DependencyProperty IsEditableProperty =
+            DependencyProperty.Register(nameof(IsReadOnly), typeof(bool), typeof(PropertyTextBoxControl), new PropertyMetadata(true));
+        #endregion
+
+
         #endregion
 
         #endregion

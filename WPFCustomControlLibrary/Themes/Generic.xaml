@@ -20,7 +20,8 @@
                         <Label Style="{StaticResource Label_Property3}" Content="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyTextBoxControl}},
                             Path=Title, NotifyOnTargetUpdated=True}"/>
                         <TextBox Grid.Column="1" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyTextBoxControl}},
-                            Path=Text, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" Margin="10,0,0,0"/>
+                            Path=Text, UpdateSourceTrigger=PropertyChanged}" 
+                                 IsReadOnly="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyTextBoxControl}}, Path=IsReadOnly}" VerticalContentAlignment="Center" Margin="10,0,0,0"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
@@ -79,7 +80,9 @@
                         <Label Style="{StaticResource Label_Property3}" Content="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyMultiLineTextBoxControl}},
                             Path=Title}"/>
                         <TextBox Grid.Row="1" VerticalContentAlignment="Top" MinHeight="50" Text="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyMultiLineTextBoxControl}},
-                            Path=Text, UpdateSourceTrigger=PropertyChanged}" AllowDrop="True" AcceptsReturn="True" AcceptsTab="True"/>
+                            Path=Text, UpdateSourceTrigger=PropertyChanged}"
+                                 IsReadOnly="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:PropertyMultiLineTextBoxControl}}, Path=IsReadOnly}"
+                                 AllowDrop="True" AcceptsReturn="True" AcceptsTab="True"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
